@@ -32,4 +32,12 @@ public class Post extends Model {
         this.content = content;
         this.author = author;
     }
+
+    public Post previous() {
+        return Post.find("postedAt < ? order by postedAt desc", postedAt).first();
+    }
+
+    public Post next() {
+        return Post.find("postedAT > ? order by postedAt asc", postedAt).first();
+    }
 }

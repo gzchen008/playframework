@@ -1,3 +1,5 @@
+#{set blogTitle :'CGZ Blog'/}
+#{set blogBaseline : 'A Java Man start playframework'/}
 <!DOCTYPE html>
 
 <html>
@@ -11,6 +13,11 @@
         #{get 'moreScripts' /}
     </head>
     <body>
+        <div id="title">
+            <span class="about">About this blog</span>
+            <h1><a href="@{Application.index()}">${blogTitle}</a> </h1>
+            <h2>${blogBaseline}</h2>
+        </div>
         #{doLayout /}
     </body>
 </html>
